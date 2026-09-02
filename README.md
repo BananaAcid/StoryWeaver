@@ -11,7 +11,7 @@ An AI-powered interactive storybook player. It reads the story aloud, illustrate
 
 <p align="center">
   <a href="docs/screens/edit-infocode.png"><img src="docs/screens/edit-infocode.png" width="320" alt="Edit info code online"></a>
-  <a href="docs/screens/edit-config.png"><img src="docs/screens/edit-config.png" width="320" alt="Edit config online"></a>
+  <a href="docs/screens/edit-config.png"><img src="docs/screens/edit-config-2.png" width="320" alt="Edit config online"></a>
 </p>
 
 ## Features

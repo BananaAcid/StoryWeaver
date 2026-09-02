@@ -845,7 +845,7 @@ pre.log div{margin:0;padding:0;line-height:1.7}
 
 " + (screenshotsHtml.Length > 0 ? @"<hr>
 <h2>Screenshots</h2>
-<p class=""profiles-hint"">Hold MENUF on the device to capture. Taken on next config upload.</p>
+<p class=""profiles-hint"">Hold MENU on the device to capture. Taken on next config upload.</p>
 " + screenshotsHtml.ToString() : "") + @"
 
 <div class=""master-bar"">

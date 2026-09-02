@@ -1,5 +1,7 @@
 import json
 import os
+import platform
+import ssl
 import time
 import threading
 import urllib.request
@@ -8,6 +10,18 @@ import input
 from PIL import Image
 
 _SERVER_URL = "https://storyweaver.zeugs.me/config"
+
+# Disable SSL certificate verification, because the AMBERNIC devices do not update their date/time correctly on start
+# Having the device turned off 3 months, and the it might not be able to connect to the servers anymore
+_insecure_ssl_ctx = ssl.create_default_context()
+_insecure_ssl_ctx.check_hostname = False
+_insecure_ssl_ctx.verify_mode = ssl.CERT_NONE
+
+
+def _user_agent():
+    return "Mozilla/5.0 ({sys} {arch}) StoryWeaver/online_config".format(
+        sys=platform.system(), arch=platform.machine()
+    )
 
 
 def _multipart_encode(fields, files):
@@ -30,30 +44,32 @@ def _multipart_encode(fields, files):
 def _http_post(url, data=None, headers=None, binary=False):
     if headers is None:
         headers = {}
+    headers.setdefault("User-Agent", _user_agent())
     if data is not None and not binary:
         if isinstance(data, dict):
             data = urllib.parse.urlencode(data).encode()
         headers.setdefault("Content-Type", "application/x-www-form-urlencoded")
     req = urllib.request.Request(url, data=data, headers=headers)
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with urllib.request.urlopen(req, timeout=30, context=_insecure_ssl_ctx) as resp:
             return resp.read().decode("utf-8"), None
     except Exception as e:
         return None, str(e)
 
 
 def _http_get(url):
+    req = urllib.request.Request(url, headers={"User-Agent": _user_agent()})
     try:
-        with urllib.request.urlopen(url, timeout=30) as resp:
+        with urllib.request.urlopen(req, timeout=30, context=_insecure_ssl_ctx) as resp:
             return resp.read().decode("utf-8"), None
     except Exception as e:
         return None, str(e)
 
 
 def _http_delete(url):
-    req = urllib.request.Request(url, method="DELETE")
+    req = urllib.request.Request(url, method="DELETE", headers={"User-Agent": _user_agent()})
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with urllib.request.urlopen(req, timeout=30, context=_insecure_ssl_ctx) as resp:
             return resp.read().decode("utf-8"), None
     except Exception as e:
         return None, str(e)
