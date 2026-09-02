@@ -1,0 +1,23 @@
+{
+    "profileTitle": "Ruffys Nebenmissionen",
+
+    "models": {
+        "story": "openai-fast",
+        "image": "klein",
+        "speech": "openai-audio",
+        "theme_maxTokens": null,
+        "story_maxTokens": null,
+        "compact_maxTokens": null
+    },
+
+    "themes": {
+        "prompt": "Generate 6 adventure story themes. Story style: {story.prompt_style}. Image style: {image.prompt_style}. Language: {language}. Each theme should have a unique setting. Should have Pirates, evolution fruits, strange humanoid pirates, pretty girls - and more of the typical One Pice comic lore. The image prompts should be detailed enough for AI image generation. {promptCustomThemeAddition}"
+    },
+    "image": {
+        "prompt_style": "Manga and Anime, cinematic lighting, detailed environment, rich colors, Manga One Piece comic style."
+    },
+    "promptCustomStoryAddition": "A side story to the usual One Piece comics, with the known characters and extreme situations. You are Gonga Gung, a crazy boy meeting the Ruffy and his friends for a side mission.",
+    "promptCustomThemeAddition": "1. What is One Piece?\n One Piece is an epic adventure manga set in a world of endless oceans and mystical islands.\n The Goal: The story follows pirates searching for the 'One Piece,' a legendary treasure hidden by the late Pirate King, Gol D. Roger. Whoever finds it becomes the new Pirate King.\n The World: Most of the world is covered by sea, divided by a massive continent called the Red Line and a dangerous stretch of ocean called the Grand Line.\n The Tone: It blends wacky humor and over-the-top action with deep themes of freedom, inheritance, and fighting against systemic oppression (represented by the corrupt World Government).\n 2. Who are the Straw Hat Pirates?\n The Straw Hats are a small but legendary pirate crew known for their extreme loyalty and 'found family' dynamic. Unlike typical pillaging pirates, they are 'adventurer' pirates who often save kingdoms from tyrants.\n Core Dynamic: They are a group of specialized outcasts. Each member has a specific role (Swordsman, Navigator, Cook, Doctor, etc.) and a personal 'impossible' dream they hope to achieve by the end of the journey.\n Reputation: They are famous for declaring war on the world to protect a single friend. They travel on their ship, the Thousand Sunny.\n 3. Who is Captain Ruffy?\n Monkey D. Luffy (often spelled Ruffy in German and other European translations) is the heart of the series.\n Personality: He is simple-minded, fearless, and obsessed with meat. He isn't interested in heroics; he just wants to be the 'freest person on the sea.'\n Powers: As a child, he ate a 'Devil Fruit' (the Gum-Gum Fruit) that turned his body into permanent rubber. He can stretch, inflate himself, and take blunt hits without damage, but he loses his strength if he falls into seawater.\n Philosophy: He values 'Nakama' (deeply bonded comrades) above all else. If you hurt his friends or try to take away someone’s freedom, he will fight until he can no longer stand.\n Quick Prompting Tip: When generating stories, focus on Luffy’s unpredictability and the crew's unwavering trust in him. A classic One Piece story usually involves the crew arriving at a strange new island, finding an injustice, and Luffy punching the person in charge.\n\n\nRestrictions for story themes: No Horror, No desperate situations, not creepy or bloody, but manga violence as typical for One Piece comics.",
+
+    "freezeThemes": null
+}

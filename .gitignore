@@ -1,0 +1,6 @@
+.history
+_packup
+*.pyc*
+__pycache__
+*_bak*
+.env

@@ -1,0 +1,45 @@
+{
+    "speech": {
+        "voice": "alloy",
+        "speed": 2.0,
+        "voices_openaiaudio": ["alloy", "ash", "ballad", "coral", "echo", "fable", "nova", "onyx", "sage", "shimmer", "verse", "marin", "cedar"],
+        "system_prompt_openaiaudio": "Read the following text aloud verbatim. Speak only the provided text, nothing else."
+    },
+    "story": {
+        "prompt_style": "Write in a neutral, immersive style. Do not start with 'ok lets begin' or similar meta-commentary. Just continue the story directly. Keep each paragraph to 2-4 sentences.",
+        "system_prompt": "You are a master storyteller. Continue the interactive adventure story based on the user's chosen decision - advance the plot from that choice. Consider not only the direct consequences but also what happens to the paths the user did NOT take: missed opportunities, allies not met, dangers not averted. Let those neglected threads subtly influence the world - unvisited locations may become relevant later, ignored characters may act on their own, foregone solutions may become harder problems. This creates a living, reactive world where every choice has weight.\n\nReturn ONLY valid XML in this exact format (no markdown, no code fences):\n<story>\n  <text>\n    4 paragraphs of story text. Pure text, no markdown or HTML.\n  </text>\n  <decisions>\n    <decision id=\"1\">First choice - 1 sentence</decision>\n    <decision id=\"2\">Second choice</decision>\n    <decision id=\"3\">Third choice</decision>\n    <decision id=\"4\">Fourth choice</decision>\n    <decision id=\"5\">Fifth choice - SPICE IT UP: Add an unexpected twist, raise the stakes, introduce a surprise element, or take the story in a bold new direction.</decision>\n  </decisions>\n  <!-- Always include this tag. If empty, the system will reuse the previous scene image. -->\n  <image-prompt>\n    If the setting changed, describe the NEW setting (NOT characters). If the setting is the same, leave empty - the previous image will be reused.\n  </image-prompt>\n</story>",
+        "prompt": "Story style: {story.prompt_style}. Image style: {image.prompt_style}. Language: {language}. {promptCustomStoryAddition}. Continue the story directly based on the provided context.",
+        "compactAt": 60,
+        "retry_prompt": "REMINDER: You MUST wrap your entire response in valid <story> XML tags following the exact format described in the system prompt. No markdown, no code fences, no plain text - ONLY raw XML.",
+        "compact_prompt": "You are a story summarizer. Compress the following adventure story conversation into a single coherent summary that preserves everything needed to continue the story seamlessly. Include:\n- Current and completed goals (including intermediate steps)\n- Decisions the player made and what happened as a result\n- Missed opportunities or paths not taken\n- Past locations visited\n- Characters met (allies, enemies, NPCs), relationships, faction standing\n- Past situations and events experienced\n- Unresolved plot threads and open mysteries\n- Current location and immediate situation\n- Player identity (name, role, background)\n- Inventory or items acquired\n- World events (observable events happening independently of the player)\n- World state changes caused by the player\n- Timeline/sequence of significant events\n\nWrite the summary as a single paragraph of dense prose. Do NOT add new content, questions, or suggestions. Preserve all NPCs, location names, and proper nouns exactly. Do NOT use XML, HTML, or any markup format. Return plain text / markdown only."
+    },
+    "image": {
+        "prompt_style": "Digital painting, cinematic lighting, detailed environment, rich colors"
+    },
+    "themes": {
+        "system_prompt": "You are a creative story generator. Generate exactly 6 distinct adventure story themes. Return ONLY valid XML in this exact format (no markdown, no code fences):\n<themes>\n  <theme id=\"1\">\n    <caption>Short theme title</caption>\n    <description>2 sentences describing the setting, who you are, and a hint of the story</description>\n    <image-prompt>Multiline description of the setting, story's theme and possibly enemy for image generation. Also mention that the image must not be generated with any text on it.</image-prompt>\n  </theme>\n  ... (5 more themes, ids 2-6)\n</themes>",
+        "prompt": "Generate 6 adventure story themes. Story style: {story.prompt_style}. Image style: {image.prompt_style}. Language: {language}. Each theme should have a unique setting (time period, motive, style). Make them diverse - fantasy, sci-fi, historical, mystery, Steam-Punk, Cyber-Punk, Solar-Punk, Transmigrator, Reborn to somewhere else, being the antagonist, evolution, etc.  Consider blending genres unexpectedly. The image prompts should be detailed enough for AI image generation. {promptCustomThemeAddition}"
+    },
+    "debug": {
+        "editOnlineId": "",
+        "dumpStoryCurrentHistoryCalls": false,
+        "log": "log.txt",
+        "cacheClearForce": false,
+        "overwriteLangCode": "",
+        "seenIntro": false,
+        "sleep": "mem",
+        "sleep_possiblestates": [
+            ["freeze", "Freeze userspace (light suspend)"],
+            ["mem", "Suspend-to-RAM (deep sleep)"]
+        ]
+    },
+    "freezeThemes": null,
+    "promptCustomStoryAddition": "",
+    "promptCustomThemeAddition": "Restrictions for story themes: No Horror, No desperate situations, not creepy or bloody, no exessive violence.",
+    "useTTSwithMusic": "lower",
+    "useTTS": true,
+    "useMusic": true,
+    "useStoryImages": true,
+    "seenWelcomescreen": false,
+    "fontSizeText": 15
+}

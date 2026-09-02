@@ -1,0 +1,14 @@
+{
+    "profileTitle": "Better AI Models (Burns more tokens)",
+    
+    "models": {
+        "story": "openai-fast",
+        "image": "klein",
+        "speech": "openai-audio",
+        "theme_maxTokens": null,
+        "story_maxTokens": null,
+        "compact_maxTokens": null
+    },
+
+    "freezeThemes": null
+}

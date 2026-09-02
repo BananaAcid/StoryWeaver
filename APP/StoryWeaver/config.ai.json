@@ -1,0 +1,14 @@
+{
+    "ai": {
+        "api_key": "",
+        "base_url": "https://gen.pollinations.ai"
+    },
+    "models": {
+        "story": "nova-fast",
+        "image": "zimage",
+        "speech": "openai-audio",
+        "theme_maxTokens": 4000,
+        "story_maxTokens": 3000,
+        "compact_maxTokens": 10000
+    }
+}
