@@ -4,3 +4,4 @@ _packup
 __pycache__
 *_bak*
 .env
+__dev
