@@ -88,6 +88,11 @@ Instead of hand-editing JSON on the device, you can edit everything in a web bro
 
 The config is fully **multi-language** (`lang/en_US.json`, `lang/de_DE.json`, etc.) and the active language follows the device system language — editable online too.
 
+> [!INFORMATION]
+> Story to lame, or stupidly full of mistakes?
+>
+> Change the AI model that is being used. Tamper with the prompts (like `promptCustomStoryAddition`), to create more depth or add restrictions.
+
 ### AI Models
 
 Configure any OpenAI-compatible API. StoryWeaver is tested with [Pollinations AI](https://enter.pollinations.ai/keys) (free tokens):
