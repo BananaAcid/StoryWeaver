@@ -93,7 +93,7 @@ The config is fully **multi-language** (`lang/en_US.json`, `lang/de_DE.json`, et
 >
 > Change the AI model that is being used. Tamper with the prompts (like `promptCustomStoryAddition`), to create more depth or add restrictions.
 >
-> For in depth instructions, see [Story Prompts Guide](./wiki/Story-Prompts-Guide)
+> For in depth instructions, see [Story Prompts Guide](https://github.com/BananaAcid/StoryWeaver/wiki/Story-Prompts-Guide)
 
 ### AI Models
 
